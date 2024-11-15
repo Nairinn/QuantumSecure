@@ -37,39 +37,6 @@ python server.py
 # Run the client
 python client.py --username <username> filepath
 
-
-## Configuration
-
-Default settings in `Config`:
-
-HOST = 'localhost'
-PORT = 8443
-MAX_CONNECTIONS = 5
-MAX_FILE_SIZE = 100 * 1024 * 1024  # 100MB
-RATE_LIMIT_REQUESTS = 10
-RATE_LIMIT_PERIOD = 60  # seconds
-TOKEN_EXPIRY = 3600    # 1 hour
-MAX_LOGIN_ATTEMPTS = 3
-LOCKOUT_PERIOD = 300   # 5 minutes
-
-
-## Project Structure
-
-
-quantumsecure/
-├── client.py           # Client implementation
-├── server.py           # Server implementation
-├── config.py           # Configuration settings
-├── crypto/
-│   ├── encryption.py   # AES encryption implementation
-│   └── authentication.py # JWT authentication
-├── utils/
-│   ├── rate_limiter.py # Rate limiting implementation
-│   └── logging_config.py # Structured logging setup
-└── tests/
-    └── test_security.py # Security feature tests
-
-
 ## Security Features
 
 ### Encryption
@@ -90,16 +57,6 @@ quantumsecure/
 - Transfer monitoring
 - Error logging
 
-## Requirements
-
-
-cryptography>=3.4
-bcrypt>=3.2
-PyJWT>=2.0
-structlog>=21.0
-tqdm>=4.65.0
-
-
 ## Testing
 
 
@@ -114,14 +71,6 @@ python -m unittest tests/test_security.py
 - Rate limit violations
 - Network timeouts
 - File handling errors
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
 
 ## Author
 
