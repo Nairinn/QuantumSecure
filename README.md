@@ -25,17 +25,44 @@ A robust and secure file transfer system featuring military-grade encryption, to
   - Integrity verification
   - Automatic cleanup
 
-## Quick Start
+**Installation**
 
+Install required packages:
 
-# Install dependencies
 pip install -r requirements.txt
 
-# Start the server
-python server.py
+**Setup**
 
-# Run the client
-python client.py --username <username> filepath
+First, initialize the server configuration:
+
+python3 scripts/setup_server.py
+
+Create a user account:
+
+python3 scripts/create_user.py --username <your-username>
+
+Start the server:
+
+python3 server/server.py
+
+Using the Client
+To transfer a file:
+python3 client/client.py --username <your-username> <path-to-file>
+
+Additional options:
+
+--host: Server hostname (default: localhost)
+--port: Server port (default: 8443)
+
+Configuration
+Default settings in config.py:
+
+Max file size: 100MB
+Rate limit: 10 requests per minute
+Token expiry: 1 hour
+Maximum login attempts: 3
+Lockout period: 5 minutes
+
 
 ## Security Features
 
